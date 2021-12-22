@@ -4,6 +4,8 @@ import 'package:persisted_bloc_stream/persisted_bloc_stream.dart';
 import 'package:{{name}}/app/{{name}}_app.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   Logger.root.level = Level.ALL;
   Logger.root.onRecord.listen((r) {
     // ignore: avoid_print
