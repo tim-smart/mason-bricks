@@ -1,4 +1,3 @@
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -12,11 +11,8 @@ final routerDelegateProvider = Provider((ref) => NavigationStackDelegate(
       navigatorKey: ref.watch(navigatorKeyProvider),
       stack:
           ref.watch(navstack.provider.bloc) as NavigationStack<navstack.Item>,
-      builder: _builder,
+      builder: (context, stack) => stack.map(_buildItem(context)).toList(),
     ));
-
-List<Page> _builder(BuildContext context, IList<navstack.Item> stack) =>
-    stack.map(_buildItem(context)).toList();
 
 Page Function(navstack.Item) _buildItem(BuildContext context) =>
     (item) => item.when(

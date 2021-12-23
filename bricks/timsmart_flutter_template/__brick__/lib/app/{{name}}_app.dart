@@ -21,7 +21,8 @@ Widget {{#camelCase}}{{name}}{{/camelCase}}App({
 
 @cwidget
 Widget _app(BuildContext context, WidgetRef ref) => MaterialApp.router(
-      themeMode: ThemeMode.light,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       routeInformationParser: ref.watch(navstack.parserProvider),
       routerDelegate: ref.watch(routerDelegateProvider),
       localizationsDelegates: [
@@ -29,8 +30,4 @@ Widget _app(BuildContext context, WidgetRef ref) => MaterialApp.router(
         intlDelegate(name: 'home_intl', builder: () => HomeIntl()),
       ],
       supportedLocales: const [Locale('en')],
-      builder: (context, child) => Theme(
-          data: ThemeData.light(),
-          child: child!,
-        ),
     );
