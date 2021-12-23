@@ -2,4 +2,3 @@ name: timsmart_flutter_template
 description: A new brick created with the Mason CLI.
 vars:
   - name
-  - package
