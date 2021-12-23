@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:navigation_stack/navigation_stack.dart';
 
 part 'app_section.freezed.dart';
 
+final appSectionRouter = NavigationStackRouter<AppSection>(
+  seperator: '_',
+  seperatorOptional: true,
+  defaultItem: const AppSection.home(),
+  routes: const [
+    NavigationStackRoute(
+      key: 'home',
+      fallback: AppSection.home(),
+    ),
+  ],
+);
+
 @freezed
 class AppSection with _$AppSection {
-  AppSection._();
+  const AppSection._();
+  const factory AppSection.home() = HomeAppSection;
 
-  factory AppSection.home() = HomeAppSection;
+  String get title => when(
+        home: () => 'Home',
+      );
 
-  late final String id = when(
-    home: () => 'home',
-  );
-
-  static final Map<String, AppSection> _idMap = {
-    'home': AppSection.home(),
-  };
-  static AppSection fromId(String id) => _idMap[id] ?? AppSection.home();
-
-  late final String title = when(
-    home: () => 'Home',
-  );
-
-  late final IconData icon = when(
-    home: () => Icons.home,
-  );
+  IconData get icon => when(
+        home: () => Icons.home,
+      );
 }

@@ -1,5 +1,4 @@
 import 'package:fpdt/fpdt.dart';
-import 'package:fpdt/option.dart' as O;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:navigation_stack/navigation_stack.dart';
@@ -14,37 +13,25 @@ final provider = BlocStreamProvider<IList<Item>>((ref) => NavigationStack(
       transform: (stack) => stack.isEmpty ? _homeStack : stack,
     ));
 
-final parserProvider = Provider((ref) => NavigationStackParser<Item>(
-      defaultItem: Item.defaultItem,
-      fromKey: Item.fromKey,
-    ));
+final parserProvider = Provider((ref) => NavigationStackRouter<Item>(
+      defaultItem: const Item.appSection(AppSection.home()),
+      routes: [
+        appSectionRouter.parentRoute<ItemAppSection>(
+          key: 'sections',
+          to: ItemAppSection.new,
+          from: (parent) => parent.section,
+        ),
+      ],
+    ).parser);
 
-const _homeStack = IListConst([Item.appSection('home')]);
+const _homeStack = IListConst([Item.appSection(AppSection.home())]);
 
 @freezed
-class Item with _$Item implements NavigationStackItemBase {
-  const Item._();
-
-  static const defaultItem = Item.appSection('home');
-
-  const factory Item.appSection(String id) = _ItemAppSection;
-
-  @override
-  Tuple2<String, String> get key => when(
-        appSection: (id) => tuple2('sections', id),
-      );
-
-  static Option<Item> fromKey(String key, String id) {
-    switch (key) {
-      case 'sections':
-        return O.some(Item.appSection(id));
-    }
-
-    return kNone;
-  }
+class Item with _$Item {
+  const factory Item.appSection(AppSection section) = ItemAppSection;
 }
 
 typedef Action = NavigationStackAction<Item>;
 
 Action gotoSection(AppSection section) =>
-    (b, add) => add(IList([Item.appSection(section.id)]));
+    (b, add) => add(IList([Item.appSection(section)]));
