@@ -49,7 +49,7 @@ flutter:
   generate: true
 
   assets:
-    # Add assets from the images directory to the application.
+    - assets/arb/
     - assets/images/
 
 flutter_icons:
