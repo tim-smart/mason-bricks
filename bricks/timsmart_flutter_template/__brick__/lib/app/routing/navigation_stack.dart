@@ -1,12 +1,10 @@
-import 'package:fast_immutable_collections/fast_immutable_collections.dart'
-    hide Tuple2;
-import 'package:{{name}}/app_sections/app_section.dart';
 import 'package:fpdt/fpdt.dart';
 import 'package:fpdt/option.dart' as O;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:navigation_stack/navigation_stack.dart';
 import 'package:riverpod_bloc_stream/riverpod_bloc_stream.dart';
+import 'package:{{name}}/app_sections/app_section.dart';
 
 export 'package:navigation_stack/navigation_stack.dart';
 

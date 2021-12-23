@@ -17,15 +17,14 @@ dependencies:
   flutter_jimtl: ^0.0.3
   flutter_localizations:
     sdk: flutter
-  fast_immutable_collections: ^7.0.0
   flutter_hooks: ^0.18.0
-  fpdt: ^0.0.34
+  fpdt: ^0.0.35
   freezed_annotation: ^1.0.0
   functional_widget_annotation: ^0.9.0
   hooks_riverpod: ^1.0.0-dev.10
   intl: ^0.17.0
   logging: ^1.0.1
-  navigation_stack: ^0.0.2
+  navigation_stack: ^0.0.3
   persisted_bloc_stream: ^6.0.0
   riverpod_bloc_stream: ^7.0.3
   url_launcher: ^6.0.6
