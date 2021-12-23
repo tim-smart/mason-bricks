@@ -21,7 +21,7 @@ dependencies:
   fpdt: ^0.0.35
   freezed_annotation: ^1.0.0
   functional_widget_annotation: ^0.9.0
-  hooks_riverpod: ^1.0.0-dev.10
+  hooks_riverpod: ^1.0.0
   intl: ^0.17.0
   logging: ^1.0.1
   navigation_stack: ^0.0.3
