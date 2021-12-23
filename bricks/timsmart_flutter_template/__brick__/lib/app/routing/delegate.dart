@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:navigation_stack/navigation_stack.dart';
 import 'package:{{name}}/app_sections/app_section.dart';
 import 'package:{{name}}/app_sections/app_sections.dart';
-import 'package:{{name}}/routing/navigation_stack.dart' as navstack;
+import 'package:{{name}}/app/routing/navigation_stack.dart' as navstack;
 
 final navigatorKeyProvider = Provider((_) => GlobalKey<NavigatorState>());
 final routerDelegateProvider = Provider((ref) => NavigationStackDelegate(

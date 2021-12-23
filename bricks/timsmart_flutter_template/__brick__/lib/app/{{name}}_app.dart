@@ -4,8 +4,8 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:{{name}}/home/home_intl.dart';
 import 'package:{{name}}/lib/intl.dart';
-import 'package:{{name}}/routing/navigation_stack.dart' as navstack;
-import 'package:{{name}}/routing/delegate.dart';
+import 'package:{{name}}/app/routing/navigation_stack.dart' as navstack;
+import 'package:{{name}}/app/routing/delegate.dart';
 
 part '{{name}}_app.g.dart';
 
