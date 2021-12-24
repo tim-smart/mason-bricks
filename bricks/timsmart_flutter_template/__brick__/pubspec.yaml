@@ -24,7 +24,7 @@ dependencies:
   hooks_riverpod: ^1.0.0
   intl: ^0.17.0
   logging: ^1.0.1
-  navigation_stack: ^0.0.4
+  navigation_stack: ^0.0.5
   persisted_bloc_stream: ^6.0.0
   riverpod_bloc_stream: ^7.0.3
   url_launcher: ^6.0.6

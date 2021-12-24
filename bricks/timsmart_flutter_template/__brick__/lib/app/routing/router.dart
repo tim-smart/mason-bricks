@@ -6,8 +6,8 @@ final appRouter = NavigationStackRouter<Item>(
   routes: [
     appSectionRouter.parentRoute<ItemAppSection>(
       key: 'sections',
-      to: ItemAppSection.new,
-      from: (parent) => parent.section,
+      toParent: ItemAppSection.new,
+      fromParent: (parent) => parent.section,
     ),
   ],
 );
