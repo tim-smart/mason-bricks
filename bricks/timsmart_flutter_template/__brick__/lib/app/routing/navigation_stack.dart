@@ -1,6 +1,5 @@
 import 'package:fpdt/fpdt.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:navigation_stack/navigation_stack.dart';
 import 'package:riverpod_bloc_stream/riverpod_bloc_stream.dart';
 import 'package:{{name}}/app_sections/app_section.dart';
@@ -13,16 +12,17 @@ final provider = BlocStreamProvider<IList<Item>>((ref) => NavigationStack(
       transform: (stack) => stack.isEmpty ? _homeStack : stack,
     ));
 
-final parserProvider = Provider((ref) => NavigationStackRouter<Item>(
-      defaultItem: const Item.appSection(AppSection.home()),
-      routes: [
-        appSectionRouter.parentRoute<ItemAppSection>(
-          key: 'sections',
-          to: ItemAppSection.new,
-          from: (parent) => parent.section,
-        ),
-      ],
-    ).parser);
+final appRouter = NavigationStackRouter<Item>(
+  defaultItem: const Item.appSection(AppSection.home()),
+  routes: [
+    appSectionRouter.parentRoute<ItemAppSection>(
+      key: 'sections',
+      to: ItemAppSection.new,
+      from: (parent) => parent.section,
+    ),
+  ],
+);
+final appRouterParser = appRouter.parser;
 
 const _homeStack = IListConst([Item.appSection(AppSection.home())]);
 

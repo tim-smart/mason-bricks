@@ -23,7 +23,7 @@ Widget {{#camelCase}}{{name}}{{/camelCase}}App({
 Widget _app(BuildContext context, WidgetRef ref) => MaterialApp.router(
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      routeInformationParser: ref.watch(navstack.parserProvider),
+      routeInformationParser: navstack.appRouterParser,
       routerDelegate: ref.watch(routerDelegateProvider),
       localizationsDelegates: [
         ...GlobalMaterialLocalizations.delegates,
