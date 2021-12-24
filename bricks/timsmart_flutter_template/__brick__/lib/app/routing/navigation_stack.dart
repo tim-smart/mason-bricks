@@ -12,18 +12,6 @@ final provider = BlocStreamProvider<IList<Item>>((ref) => NavigationStack(
       transform: (stack) => stack.isEmpty ? _homeStack : stack,
     ));
 
-final appRouter = NavigationStackRouter<Item>(
-  defaultItem: const Item.appSection(AppSection.home()),
-  routes: [
-    appSectionRouter.parentRoute<ItemAppSection>(
-      key: 'sections',
-      to: ItemAppSection.new,
-      from: (parent) => parent.section,
-    ),
-  ],
-);
-final appRouterParser = appRouter.parser;
-
 const _homeStack = IListConst([Item.appSection(AppSection.home())]);
 
 @freezed
