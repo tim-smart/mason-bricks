@@ -6,7 +6,7 @@ import 'package:{{name}}/shared/app_scaffold/app_scaffold.dart';
 part 'home_screen.g.dart';
 
 @swidget
-Widget homeScreen(BuildContext context) {
+Widget _homeScreen(BuildContext context) {
   final t = HomeIntl.of(context);
 
   return AppSliverScaffold(

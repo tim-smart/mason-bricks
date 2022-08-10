@@ -5,8 +5,6 @@ import 'package:navigation_stack/navigation_stack.dart';
 part 'app_section.freezed.dart';
 
 final appSectionRouter = NavigationStackRouter<AppSection>(
-  seperator: '_',
-  seperatorOptional: true,
   defaultItem: const AppSection.home(),
   routes: const [
     NavigationStackRoute(
@@ -19,6 +17,7 @@ final appSectionRouter = NavigationStackRouter<AppSection>(
 @freezed
 class AppSection with _$AppSection {
   const AppSection._();
+
   const factory AppSection.home() = HomeAppSection;
 
   String get title => when(

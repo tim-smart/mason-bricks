@@ -4,7 +4,7 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 part 'app_scaffold.g.dart';
 
 @swidget
-Widget appScaffold({
+Widget _appScaffold({
   required String title,
   required Widget body,
 }) =>
@@ -16,7 +16,7 @@ Widget appScaffold({
     );
 
 @swidget
-Widget appSliverScaffold({
+Widget _appSliverScaffold({
   required String title,
   required List<Widget> slivers,
 }) =>
