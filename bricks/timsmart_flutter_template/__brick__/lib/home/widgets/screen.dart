@@ -1,9 +1,8 @@
+import 'package:{{name}}/index.dart';
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:{{name}}/home/home_intl.dart';
-import 'package:{{name}}/shared/app_scaffold/app_scaffold.dart';
 
-part 'home_screen.g.dart';
+part 'screen.g.dart';
 
 @swidget
 Widget _homeScreen(BuildContext context) {

@@ -1,6 +1,7 @@
+import 'package:{{name}}/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_nucleus/flutter_nucleus.dart';
 import 'package:logging/logging.dart';
-import 'package:{{name}}/app/{{name}}_app.dart';
 
 void main() async {
   Logger.root.level = Level.ALL;
@@ -9,5 +10,7 @@ void main() async {
     print('${r.level.name}: ${r.loggerName}: ${r.time}: ${r.message}');
   });
 
-  runApp(const {{#pascalCase}}{{name}}{{/pascalCase}}App());
+  runApp(AtomScope(
+    child: const {{#pascalCase}}{{name}}{{/pascalCase}}App(),
+  ));
 }

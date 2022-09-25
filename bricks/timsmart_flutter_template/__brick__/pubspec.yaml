@@ -1,4 +1,4 @@
-name: "{{name}}"
+name: {{name}}
 description: A new Flutter project.
 
 # Prevent accidental publishing to pub.dev.
@@ -11,20 +11,21 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
-  enum_utils: ^0.3.0
+  enum_utils: ^0.4.0
   flutter:
     sdk: flutter
   flutter_jimtl: ^0.0.3
   flutter_localizations:
     sdk: flutter
   flutter_hooks: ^0.18.0
+  flutter_nucleus: ^0.1.5
   fpdt: ^0.0.35
+  fpdt_flutter: ^0.1.0
   freezed_annotation: ^2.1.0
   functional_widget_annotation: ^0.10.0
-  hooks_riverpod: ^1.0.0
   intl: ^0.17.0
   logging: ^1.0.1
-  navigation_stack: ^0.1.0
+  navigation_stack: ^0.1.2
   url_launcher: ^6.0.6
 
 dev_dependencies:

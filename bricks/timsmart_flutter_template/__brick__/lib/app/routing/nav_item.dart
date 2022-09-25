@@ -1,13 +1,14 @@
+import 'package:{{name}}/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:{{name}}/app_sections/app_section.dart';
-import 'package:{{name}}/app_sections/app_sections.dart';
 
 part 'nav_item.freezed.dart';
 
 @freezed
 class NavItem with _$NavItem {
+  const NavItem._();
+
   const factory NavItem.appSection(AppSection section) = NavItemAppSection;
 
   Page build(BuildContext context) => when(
