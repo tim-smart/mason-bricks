@@ -11,8 +11,8 @@ Widget _{{#camelCase}}{{name}}{{/camelCase}}App() =>
     AtomBuilder((context, watch, child) => MaterialApp.router(
           theme: ThemeData.light(),
           darkTheme: ThemeData.dark(),
-          routeInformationParser: appRouterParser,
-          routerDelegate: watch(routerDelegateAtom),
+          routeInformationParser: watch(appRouter).parser,
+          routerDelegate: watch(appRouter).delegate,
           localizationsDelegates: [
             ...GlobalMaterialLocalizations.delegates,
             intlDelegate(name: 'home_intl', builder: () => HomeIntl()),
