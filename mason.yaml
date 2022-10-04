@@ -1,3 +1,5 @@
 bricks:
   timsmart_flutter_template:
     path: bricks/timsmart_flutter_template
+  nucleus_app:
+    path: bricks/nucleus_app

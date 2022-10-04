@@ -1,0 +1,15 @@
+import 'package:{{name}}/index.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_nucleus/flutter_nucleus.dart';
+import 'package:functional_widget_annotation/functional_widget_annotation.dart';
+
+part '{{name}}_app.g.dart';
+
+@swidget
+Widget _{{#camelCase}}{{name}}{{/camelCase}}App() =>
+    AtomBuilder((context, watch, child) => MaterialApp.router(
+          theme: ThemeData.light(),
+          darkTheme: ThemeData.dark(),
+          routeInformationParser: watch(appRouter).parser,
+          routerDelegate: watch(appRouter).delegate,
+        ));
