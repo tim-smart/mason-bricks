@@ -1,5 +1,5 @@
 name: nucleus_app
 version: 0.1.0
-description: A simple app using the nucleus package
+description: A simple app using the nucleus package, with flutter_hooks and functional_widget.
 vars:
   - name

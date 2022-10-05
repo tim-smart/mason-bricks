@@ -1,9 +1,6 @@
 name: {{name}}
 description: A new Flutter project.
-
-# Prevent accidental publishing to pub.dev.
 publish_to: "none"
-
 version: 1.0.0+1
 
 environment:
