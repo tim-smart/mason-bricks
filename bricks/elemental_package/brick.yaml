@@ -1,0 +1,6 @@
+name: elemental_package
+version: 0.1.0
+description: A package template that uses elemental and freezed, for implementing domain logic.
+repository: https://github.com/tim-smart/mason-bricks.git
+vars:
+  - name
